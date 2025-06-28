@@ -70,4 +70,19 @@ class ClienteController extends Controller
             'mensagem' => 'Cliente excluído com sucesso!'
         ]);
     }
+
+    // Atualizao pra ver se roda 
+
+    public function depilacoes($id)
+    {
+        $cliente = Cliente::findOrFail($id);
+        return $cliente->procedimentos()->where('tipo', 'depilacao')->orderBy('data_procedimento', 'desc')->get();
+    }
+
+    // Listar micropigmentações de um cliente
+    public function micropigmentacoes($id)
+    {
+        $cliente = Cliente::findOrFail($id);
+        return $cliente->procedimentos()->where('tipo', 'micropigmentacao')->orderBy('data_procedimento', 'desc')->get();
+    }
 }
