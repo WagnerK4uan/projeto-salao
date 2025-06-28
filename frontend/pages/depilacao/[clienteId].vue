@@ -9,7 +9,7 @@ const { data: procedimentos } = await useFetch(
 <template>
         <Header/>
   <div class="p-6">
-    <h1 class="text-2xl font-bold mb-4">Depilações da Cliente</h1>
+    <h1 class="text-2xl font-bold mb-4">Fotodepilação</h1>
     <div class="space-y-4">
       <div
         v-for="proc in procedimentos"
